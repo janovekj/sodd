@@ -1,0 +1,10 @@
+{
+  "label": "Schemas",
+  "position": 3,
+  "className": "schemas-category",
+  "link": {
+    "type": "generated-index"
+  },
+  "collapsible": true,
+  "collapsed": false
+}

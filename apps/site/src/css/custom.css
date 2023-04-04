@@ -1,0 +1,40 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #b51b20;
+  --ifm-color-primary-dark: #a3181d;
+  --ifm-color-primary-darker: #9a171b;
+  --ifm-color-primary-darkest: #7f1316;
+  --ifm-color-primary-light: #c71e23;
+  --ifm-color-primary-lighter: #d01f25;
+  --ifm-color-primary-lightest: #e02f34;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #e5af81;
+  --ifm-color-primary-dark: #df9c63;
+  --ifm-color-primary-darker: #dc9354;
+  --ifm-color-primary-darkest: #d0772b;
+  --ifm-color-primary-light: #ebc29f;
+  --ifm-color-primary-lighter: #eecbae;
+  --ifm-color-primary-lightest: #f7e8da;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.schemas-category > ul,
+.issues-category > ul,
+.sidebar-code {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.schemas-category .theme-doc-sidebar-item-link-level-4 {
+  font-size: 0.9rem;
+}

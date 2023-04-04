@@ -1,0 +1,9 @@
+{
+  "label": "Issues",
+  "position": 4,
+  "className": "issues-category",
+  "link": {
+    "type": "doc",
+    "id": "index"
+  }
+}

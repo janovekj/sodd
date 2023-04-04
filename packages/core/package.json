@@ -1,0 +1,46 @@
+{
+  "name": "@sodd/core",
+  "description": "Lightweight TypeScript data validation library",
+  "keywords": [
+    "validation",
+    "typescript",
+    "parsing"
+  ],
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Jan Ove Kjærland"
+  },
+  "homepage": "https://sodd.dev",
+  "bugs": {
+    "url": "https://github.com/janovekj/sodd/issues"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sodd.umd.cjs",
+  "module": "./dist/sodd.js",
+  "types": "./dist/sodd.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/sodd.js",
+      "require": "./dist/sodd.umd.cjs",
+      "types": "./dist/sodd.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.3",
+    "vite-plugin-dts": "^2.3.0",
+    "vitest": "^0.29.8"
+  }
+}

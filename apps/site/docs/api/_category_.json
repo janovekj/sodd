@@ -1,0 +1,10 @@
+{
+  "label": "API Reference",
+  "position": 4,
+  "className": "api-reference-category",
+  "link": {
+    "type": "generated-index",
+    "description": "Sodd's runtime and TypeScript API reference"
+  },
+  "collapsible": false
+}

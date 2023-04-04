@@ -1,0 +1,10 @@
+{
+  "label": "object",
+  "position": 1,
+  "className": "sidebar-code",
+  "link": {
+    "type": "doc",
+    "id": "index"
+  },
+  "collapsible": false
+}

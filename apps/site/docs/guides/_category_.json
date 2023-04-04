@@ -1,0 +1,9 @@
+{
+  "label": "Guides and concepts",
+  "position": 3,
+  "link": {
+    "slug": "/category/guides",
+    "type": "generated-index"
+  },
+  "collapsible": false
+}
