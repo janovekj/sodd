@@ -894,7 +894,7 @@ test("enum", () => {
     Expect<
       Equal<
         InferIssue<typeof schema>,
-        InvalidTypeIssue | InvalidEnumValueIssue<readonly ["asd", "123"]>
+        InvalidTypeIssue | InvalidEnumValueIssue<["asd", "123"]>
       >
     >
   ];

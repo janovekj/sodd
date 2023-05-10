@@ -77,13 +77,13 @@ importers:
   packages/core:
     specifiers:
       prettier: ^2.8.8
-      typescript: ^5.0.4
+      typescript: ~4.7.4
       vite: ^4.3.3
       vite-plugin-dts: ^2.3.0
       vitest: ^0.29.8
     devDependencies:
       prettier: 2.8.8
-      typescript: 5.0.4
+      typescript: 4.7.4
       vite: 4.3.3
       vite-plugin-dts: 2.3.0_vite@4.3.3
       vitest: 0.29.8
@@ -10304,6 +10304,12 @@ packages:
     dependencies:
       is-typedarray: 1.0.0
     dev: false
+
+  /typescript/4.7.4:
+    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true
 
   /typescript/4.8.4:
     resolution: {integrity: sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==}

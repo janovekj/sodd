@@ -481,7 +481,7 @@ export const record = <TSchema extends Schema>(
       if (typeof input === _object && input !== null) {
         const issues: InferIssue<TSchema>[] = [];
         const newRecord: { [key: string]: Infer<TSchema> } = {};
-        for (const key in input) {
+        for (const key in input as object) {
           const result = schema.parse((input as any)[key] as any);
           if (result.ok) {
             newRecord[key] = result.data;
@@ -588,7 +588,7 @@ export const object = <
     if (!!input && typeof input === _object) {
       const definitionKeys = new Set(Object.keys(definition));
 
-      const unknownKeys = Object.keys(input).filter(
+      const unknownKeys = Object.keys(input as object).filter(
         (key) => !definitionKeys.has(key)
       );
 
@@ -895,7 +895,10 @@ export type EnumerationSchema<Enumerations extends ReadonlyArray<string>> = {
 /**
  * @link https://sodd.dev/api/schemas/enumeration
  */
-export const enumeration = <const Enumerations extends ReadonlyArray<string>>(
+export const enumeration = <
+  Enumeration extends string,
+  Enumerations extends [Enumeration] | Enumeration[]
+>(
   enumerations: Enumerations
 ): EnumerationSchema<Enumerations> => {
   return {
@@ -905,7 +908,7 @@ export const enumeration = <const Enumerations extends ReadonlyArray<string>>(
       const result = string().parse(input);
 
       if (result.ok) {
-        if (enumerations.includes(result.data)) {
+        if (enumerations.includes(result.data as any)) {
           return ok(result.data as any);
         } else {
           const issue: InvalidEnumValueIssue<Enumerations> = {
@@ -956,7 +959,7 @@ export const keyof = <Definition extends ObjectDefinition>(
  */
 export const pick = <
   TObjectSchema extends ObjectSchema,
-  const Keys extends ReadonlyArray<keyof GetDefinition<TObjectSchema>>
+  Keys extends Array<keyof GetDefinition<TObjectSchema>>
 >(
   schema: TObjectSchema,
   keys: Keys
@@ -980,7 +983,7 @@ export const pick = <
  */
 export const omit = <
   TObjectSchema extends ObjectSchema,
-  const Keys extends ReadonlyArray<keyof GetDefinition<TObjectSchema>>
+  Keys extends Array<keyof GetDefinition<TObjectSchema>>
 >(
   schema: TObjectSchema,
   keys: Keys
