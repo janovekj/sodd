@@ -10,7 +10,7 @@ This guide assumes you are familiar with [Results](/guides/results).
 
 Sodd is unopinionated on how errors are handled. Instead, Sodd will provide as much useful information as possible, and leave it up to the user to decide how to handle it.
 
-Out of the box, Sodd ships with a set of issues that cover the most common cases, but it is also possible to create custom issue types. See [the API reference on issue types](/api/issue-types) for more a complete list of the built-in issues.
+Out of the box, Sodd ships with a set of issues that cover the most common cases, but it is also possible to create custom issue types. See [the API reference on issue types](/api/issues) for more a complete list of the built-in issues.
 
 ## Example
 
@@ -81,4 +81,4 @@ if (!result.ok) {
 
 ## Error formatting
 
-Sodd does not have a built-in way to format error messages, but might add this in the future. In the meantime, you can have a look at how [https://github.com/causaly/zod-validation-error](zod-validation-error) does things.
+Sodd does not have a built-in way to format error messages, but might add this in the future. In the meantime, you can have a look at how [zod-validation-error](https://github.com/causaly/zod-validation-error) does things.

@@ -21,7 +21,7 @@ Sodd is mostly focused on representing schemas for JSON data, and does not inclu
 - Error formatting
 - Coercion, preprocessing, refinements and transformations
 - Async parsing
-- ...and more, probably! See [Zod's documentation](https://zod.dev/docs) for a full list of features, and compare with [Sodd's API reference](/category/api). The individual API pages attempts to make clear any differences in behavior between the two libraries.
+- ...and more, probably! See [Zod's documentation](https://zod.dev/docs) for a full list of features, and compare with [Sodd's API reference](/category/api-reference). The individual API pages attempts to make clear any differences in behavior between the two libraries.
 
 However, Sodd is designed to be extensible, and it is possible to add many of these features yourself. See [Custom schemas](/guides/custom-schemas) and [Error handling](/guides/error-handling) for more information. In the future, Sodd may also provide some of these features out of the box, likely as separate packages.
 
