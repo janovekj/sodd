@@ -47,7 +47,7 @@ One advantage of Sodd, is the support for type-safe validation issues. Where err
 
 ## TypeScript version
 
-Zod works in any project with a TypeScript version of 4.5 or higher, whereas Sodd uses some newer features that requires 5.0 or higher. Support for older versions of TypeScript may be added in the future.
+Zod works in any project with a TypeScript version of 4.5 or higher, whereas Sodd uses some newer features that requires 4.7 or higher. Support for older versions of TypeScript may be added in the future.
 
 ## Ecosystem
 

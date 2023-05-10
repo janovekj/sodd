@@ -5,7 +5,7 @@ sidebar_position: 1
 # Getting started
 
 :::info
-Sodd requires a TypeScript version of at least 5.0, and `strict: true` to be set in your `tsconfig.json`.
+Sodd requires a TypeScript version of at least 4.7, and `strict: true` to be set in your `tsconfig.json`.
 :::
 
 Install with npm, yarn or pnpm:
