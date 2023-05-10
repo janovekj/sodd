@@ -50,3 +50,5 @@ if (result.ok) {
   console.error(result.issues);
 }
 ```
+
+[Try the CodeSandbox!](https://codesandbox.io/s/sodd-quickstart-csfnbh?file=/src/index.ts)
