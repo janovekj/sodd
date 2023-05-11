@@ -5,6 +5,8 @@ Creates an [`enumeration`](/api/schemas/enumeration) schema that parses input as
 ## Example
 
 ```ts
+import { keyof, object, number } from "@sodd/core";
+
 const reactionsSchema = object({
   thumbsUp: number(),
   thumbsDown: number(),

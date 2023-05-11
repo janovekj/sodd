@@ -7,26 +7,11 @@ Creates a schema that parses input as a given literal `string`, `number` or `boo
 ```ts
 import { literal } from "@sodd/core";
 
-const pizzaLiteralSchema = literal("pizza");
+const cheeseLiteralSchema = literal("sodd");
 
-pizzaLiteralSchema.parse("pizza");
-// =>
-{
-  ok: true,
-  data: "pizza"
-}
-
-pizzaLiteralSchema.parse(123);
-// =>
-{
-  ok: false,
-  issues: [{
-    code: "invalid_literal",
-    expected: "pizza",
-    received: 123,
-    path: []
-  }]
-}
+cheeseLiteralSchema.parse("sodd"); // ✅ => "cheese";
+cheeseLiteralSchema.parse("water"); // 🚨
+cheeseLiteralSchema.parse(123); // 🚨
 ```
 
 ## Issue types

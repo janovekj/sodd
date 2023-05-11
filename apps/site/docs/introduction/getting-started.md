@@ -38,7 +38,7 @@ const userSchema = object({
 type User = Infer<typeof userSchema>;
 
 const result = userSchema.parse({
-  name: "User McUserface",
+  name: "Test McTestface",
   phone: 123456789,
   coordinates: [71.1655, 25.7992],
   roles: ["admin", "user"],

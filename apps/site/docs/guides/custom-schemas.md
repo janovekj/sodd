@@ -11,7 +11,7 @@ Out of the box, Sodd mainly provides tools for parsing JSON data and other basic
 For example, let's say you want to parse some user input as an email address. You could use the `string` parser, but that would allow any string to pass validation. Instead, you want to ensure that the string is a valid _email address_. Here is how you could do that:
 
 ```ts
-import { string, Result, InvalidTypeIssue, GetIssue } from "@sodd/core";
+import { string, Result, InvalidTypeIssue, InferIssue } from "@sodd/core";
 
 // We want to provide a custom issue for this schema
 interface InvalidEmailIssue {
@@ -33,7 +33,7 @@ const emailSchema = {
     // ↓ We'll keep the returned type as `string`
     string,
     // ↓ Pass along whatever issues might occur in the string parser
-    GetIssue<StringSchema> | InvalidEmailIssue
+    InferIssue<StringSchema> | InvalidEmailIssue
     //                       ↑ Add our custom issue type
   > => {
     // Use the `string` schema to get some basic validation

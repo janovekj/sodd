@@ -7,6 +7,8 @@ For an `object` schema with either of the `unknownKeyBehavior`s, the utility fun
 ## Example
 
 ```ts
+import { object, string, number } from "@sodd/core";
+
 // `object` has "strip" behavior by default
 const userSchema = object({
   name: string(),

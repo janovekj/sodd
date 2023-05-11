@@ -6,7 +6,11 @@ Creates a schema which parses input as one of the given `string` values.
 Ideally, this would have been called `enum`, but that's a reserved keyword in JavaScript.
 :::
 
+## Example
+
 ```ts
+import { enumeration } from "@sodd/core";
+
 const reactionSchema = enumeration(["thumbsUp", "thumbsDown", "heart"]);
 
 reactionSchema.parse("thumbsUp");

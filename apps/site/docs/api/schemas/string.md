@@ -11,20 +11,8 @@ import { string } from "@sodd/core";
 
 const myString = string();
 
-string(parse).parse("foo");
-// =>
-{ ok: true, data: "foo" }
-
-string(parse).parse(123);
-// =>
-{
-  ok: false,
-  issues: [{
-    code: "invalid_type",
-    expected: "string",
-    received: "number"
-  }]
-}
+string(parse).parse("sodd"); // ✅ => "sodd"
+string(parse).parse(123); // 🚨
 ```
 
 ## Issue types
