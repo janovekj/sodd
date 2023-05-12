@@ -13,6 +13,7 @@ stringOrNumberSchema.parse("hello"); // ✅
 stringOrNumberSchema.parse(123); // ✅
 stringOrNumberSchema.parse(true); // 🚨
 
+// discriminated unions works too!
 const foodSchema = union([
   object({
     type: literal("pizza"),
@@ -26,6 +27,9 @@ const foodSchema = union([
     type: literal("sodd"),
   }),
 ]);
+
+type Food = Infer<typeof foodSchema>;
+// => { type: "pizza"; toppings: string[]; } | { type: "burger"; withFries: boolean; } | { type: "sodd"; }
 
 foodSchema.parse({ type: "pizza", toppings: ["cheese", "tomato"] }); // ✅
 foodSchema.parse({ type: "burger", withFries: true }); // ✅

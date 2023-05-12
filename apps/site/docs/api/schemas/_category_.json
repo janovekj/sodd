@@ -1,6 +1,6 @@
 {
   "label": "Schemas",
-  "position": 3,
+  "position": 1,
   "className": "schemas-category",
   "link": {
     "type": "generated-index"
