@@ -12,4 +12,4 @@ Sodd is a lightweight TypeScript data validation library, heavily inspired by [Z
 - **Extensible** — Sodd is designed to be extended with custom types and validation functionality.
 - **Zero dependencies**
 
-Sodd aims to be a good alternative when you don't need the full power of Zod, and want something with a slightly smaller bundle footprint. Sodd should include most things you need to parse data the most common sources, such as JSON responses from HTTP requests, query params from the URL, or data from a form. See [the comparison with Zod](/introduction/zod-comparison) for more information.
+Sodd aims to be a good alternative when you don't need the full power of Zod, and want something with a slightly smaller bundle footprint. Sodd should include most things you need to parse data the most common sources, such as JSON responses from HTTP requests, query params from the URL, or data from a form. See [the comparison with Zod](https://sodd.dev/introduction/zod-comparison) for more information.
