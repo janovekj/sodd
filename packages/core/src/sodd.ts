@@ -130,12 +130,12 @@ export interface UnknownKeyIssue extends BaseIssue {
   key: string;
 }
 
-export type ErrorResult<TIssue extends BaseIssue> = {
+type ErrorResult<TIssue extends BaseIssue> = {
   ok: false;
   issues: TIssue[];
 };
 
-export type SuccessResult<T> = {
+type SuccessResult<T> = {
   ok: true;
   data: T;
 };
