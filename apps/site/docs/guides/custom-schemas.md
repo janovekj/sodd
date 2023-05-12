@@ -10,8 +10,10 @@ Out of the box, Sodd mainly provides tools for parsing JSON data and other basic
 
 For example, let's say you want to parse some user input as an email address. You could use the `string` parser, but that would allow any string to pass validation. Instead, you want to ensure that the string is a valid _email address_. Here is how you could do that:
 
+([CodeSandbox](https://codesandbox.io/s/sodd-custom-schemas-s2q2mj?file=/src/index.ts))
+
 ```ts
-import { string, Result, InvalidTypeIssue, InferIssue } from "@sodd/core";
+import { string, Result, StringSchema, object, InferIssue } from "@sodd/core";
 
 // We want to provide a custom issue for this schema
 interface InvalidEmailIssue {
@@ -75,16 +77,16 @@ const schema = object({
   email: emailSchema,
 });
 
-schema.parse({ email: "test@example.com" })
-// =>
+schema.parse({ email: "test@example.com" });
+/* =>
 {
   ok: true,
   data: { email: "test@example" }
 }
+*/
 
-
-schema.parse({ email: "test" }))
-// =>
+schema.parse({ email: "test" });
+/* =>
 {
   ok: false,
   issues: [
@@ -94,5 +96,6 @@ schema.parse({ email: "test" }))
       path: ["email"], // the path was added!
     },
   ],
-}
+} 
+*/
 ```
