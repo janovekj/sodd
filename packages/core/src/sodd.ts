@@ -13,11 +13,17 @@ const _enumeration = "enumeration";
 const _brand = "brand";
 const _lazy = "lazy";
 
+/**
+ * @link https://sodd.dev/api/Infer
+ */
 export type Infer<TSchema extends Schema> = Extract<
   ReturnType<TSchema["parse"]>,
   { ok: true }
 >["data"];
 
+/**
+ * @link https://sodd.dev/api/InferIssue
+ */
 export type InferIssue<TSchema extends Schema> = ReturnType<
   TSchema["parse"]
 > extends Result<unknown, infer TIssue>
