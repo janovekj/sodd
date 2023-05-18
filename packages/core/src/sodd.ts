@@ -985,7 +985,7 @@ export const pick = <
 };
 
 /**
- * @link https://sodd.dev/api/schemas/objet/omit
+ * @link https://sodd.dev/api/schemas/object/omit
  */
 export const omit = <
   TObjectSchema extends ObjectSchema,
