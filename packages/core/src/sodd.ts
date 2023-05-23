@@ -840,7 +840,6 @@ const _deepPartial = <TSchema extends Schema>(
 /**
  * @link https://sodd.dev/api/schemas/object/deepPartial
  */
-// can this limitation be fixed, tho?
 export const deepPartial = <TObjectSchema extends ObjectSchema>(
   schema: TObjectSchema
 ): DeepPartial<TObjectSchema> => {
