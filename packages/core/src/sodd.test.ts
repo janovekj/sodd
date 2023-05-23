@@ -195,7 +195,12 @@ test("array with non-empty option", () => {
   // @ts-ignore - noUnusedLocals
   type Assertions = [
     Expect<Equal<Infer<typeof schema>, [string, ...string[]]>>,
-    Expect<Equal<InferIssue<typeof schema>, InvalidTypeIssue | TooSmallIssue>>
+    Expect<
+      Equal<
+        InferIssue<typeof schema>,
+        InvalidTypeIssue | TooSmallIssue<"array">
+      >
+    >
   ];
 
   expect(schema.parse(["asd", "123"])).toEqual({
@@ -211,6 +216,7 @@ test("array with non-empty option", () => {
         min: 1,
         value: 0,
         path: [],
+        kind: "array",
       },
     ],
   });
@@ -222,7 +228,12 @@ test("nonEmpty", () => {
   // @ts-ignore - noUnusedLocals
   type Assertions = [
     Expect<Equal<Infer<typeof schema>, [string, ...string[]]>>,
-    Expect<Equal<InferIssue<typeof schema>, InvalidTypeIssue | TooSmallIssue>>
+    Expect<
+      Equal<
+        InferIssue<typeof schema>,
+        InvalidTypeIssue | TooSmallIssue<"array">
+      >
+    >
   ];
 
   expect(schema.parse(["asd", "123"])).toEqual({
@@ -238,6 +249,7 @@ test("nonEmpty", () => {
         min: 1,
         value: 0,
         path: [],
+        kind: "array",
       },
     ],
   });
@@ -968,7 +980,10 @@ test("tuple", () => {
     Expect<
       Equal<
         Issue,
-        InvalidTypeIssue | TooBigIssue | TooSmallIssue | MissingKeyIssue
+        | InvalidTypeIssue
+        | TooBigIssue<"tuple">
+        | TooSmallIssue<"tuple">
+        | MissingKeyIssue
       >
     >
   ];
@@ -998,6 +1013,7 @@ test("tuple", () => {
         min: 2,
         value: 1,
         path: [],
+        kind: "tuple",
       },
     ],
   });
@@ -1010,6 +1026,7 @@ test("tuple", () => {
         max: 2,
         value: 3,
         path: [],
+        kind: "tuple",
       },
     ],
   });
@@ -1024,7 +1041,9 @@ test("tuple with rest", () => {
   // @ts-ignore - noUnusedLocals
   type Assertions = [
     Expect<Equal<Type, [string, { foo: number }, ...number[]]>>,
-    Expect<Equal<Issue, InvalidTypeIssue | TooSmallIssue | MissingKeyIssue>>
+    Expect<
+      Equal<Issue, InvalidTypeIssue | TooSmallIssue<"tuple"> | MissingKeyIssue>
+    >
   ];
 
   expect(schema.parse(["asd", { foo: 123 }])).toEqual({
@@ -1040,6 +1059,7 @@ test("tuple with rest", () => {
         min: 2,
         value: 1,
         path: [],
+        kind: "tuple",
       },
     ],
   });
@@ -1637,7 +1657,7 @@ test("deep partial with nested tuple", () => {
     Expect<
       Equal<
         InferIssue<typeof schema>,
-        InvalidTypeIssue | TooBigIssue | TooSmallIssue
+        InvalidTypeIssue | TooBigIssue<"tuple"> | TooSmallIssue<"tuple">
       >
     >
   ];
@@ -1785,7 +1805,7 @@ test("deep partial with record of tuples", () => {
     Expect<
       Equal<
         InferIssue<typeof schema>,
-        InvalidTypeIssue | TooBigIssue | TooSmallIssue
+        InvalidTypeIssue | TooBigIssue<"tuple"> | TooSmallIssue<"tuple">
       >
     >
   ];
@@ -2001,8 +2021,8 @@ test("realistic-ish example", () => {
     Comment,
     | MissingKeyIssue
     | InvalidTypeIssue
-    | TooBigIssue
-    | TooSmallIssue
+    | TooBigIssue<"tuple">
+    | TooSmallIssue<"tuple">
     | InvalidEnumValueIssue<["thumbsUp", "laugh", "cry"]>
   > = object({
     id: string(),
@@ -2054,8 +2074,8 @@ test("realistic-ish example", () => {
         InferIssue<typeof postSchema>,
         | InvalidTypeIssue
         | MissingKeyIssue
-        | TooBigIssue
-        | TooSmallIssue
+        | TooBigIssue<"tuple">
+        | TooSmallIssue<"tuple">
         | InvalidEnumValueIssue<["thumbsUp", "laugh", "cry"]>
       >
     >

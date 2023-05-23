@@ -113,19 +113,21 @@ export interface InvalidUnionIssue<
 /**
  * @link https://sodd.dev/api/issues/TooBigIssue
  */
-export interface TooBigIssue extends BaseIssue {
+export interface TooBigIssue<Kind extends string> extends BaseIssue {
   code: typeof too_big;
   max: number;
   value: number;
+  kind: Kind;
 }
 
 /**
  * @link https://sodd.dev/api/issues/TooSmallIssue
  */
-export interface TooSmallIssue extends BaseIssue {
+export interface TooSmallIssue<Kind extends string> extends BaseIssue {
   code: typeof too_small;
   min: number;
   value: number;
+  kind: Kind;
 }
 
 /**
@@ -296,7 +298,7 @@ export type ArraySchema<
       ? Array<Infer<TSchema>>
       : NonEmptyArray<Infer<TSchema>>,
     | InvalidTypeIssue
-    | (Cardinality extends "non-empty" ? TooSmallIssue : never)
+    | (Cardinality extends "non-empty" ? TooSmallIssue<"array"> : never)
     | InferIssue<TSchema>
   >;
 };
@@ -328,6 +330,7 @@ export const array = <
             min: 1,
             path: [],
             value: 0,
+            kind: "array",
           },
         ]);
       }
@@ -379,8 +382,8 @@ export type TupleSchema<
         ]
       : AssertArray<{ [Key in keyof Schemas]: Infer<Schemas[Key]> }>,
     | InvalidTypeIssue
-    | (Rest extends Schema ? never : TooBigIssue)
-    | TooSmallIssue
+    | (Rest extends Schema ? never : TooBigIssue<"tuple">)
+    | TooSmallIssue<"tuple">
     | InferIssue<Schemas[number]>
     | (Rest extends Schema ? InferIssue<Rest> : never)
   >;
@@ -417,6 +420,7 @@ export function tuple<
             min: schemas.length,
             path: [],
             value: input.length,
+            kind: "tuple",
           });
         } else if (input.length > schemas.length && !rest) {
           issues.push({
@@ -424,6 +428,7 @@ export function tuple<
             max: schemas.length,
             path: [],
             value: input.length,
+            kind: "tuple",
           } as any);
         } else {
           for (let i = 0; i < input.length; i++) {
