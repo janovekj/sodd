@@ -66,7 +66,14 @@ const config = {
           },
         ],
       },
-
+      algolia: {
+        appId: "BYI6O61DGO",
+        apiKey: "b0c4733fad769ecf6817372ab2635fc1",
+        indexName: "sodd",
+        contextualSearch: true,
+        // Optional: path for search page that enabled by default (`false` to disable it)
+        searchPagePath: "search",
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
