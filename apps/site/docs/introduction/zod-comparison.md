@@ -35,7 +35,7 @@ While no benchmarks have actually been made for Sodd, it is presumed to be slowe
 
 ## API design
 
-Zod's implementation is class-based, and provides a nice chainable API for composing schemas. Due to Sodd's focus on tree-shaking, its implementation and API is function-based, and schema composition is done in a more functional style, which may or may not be preferable to you.
+Zod's provides a nice chainable API for composing schemas. Due to Sodd's focus on tree-shaking, its implementation and API is very function-based, and schema composition is done in a more functional style, which may or may not be preferable to you.
 
 Furthermore, Sodd's `.parse` methods will always return a result object instead of throwing. This was a choice made to make it easier to type issues. Zod's schemas provides both a `.safeParse` method, which is similar to Sodd's `.parse`, and a `.parse` method which throws.
 
